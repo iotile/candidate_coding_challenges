@@ -1,8 +1,8 @@
-##Introduction
+## Introduction
 This project is designed to get you familiar with how to build and interact with IOTile hardware devices by creating a virtual hardware device and then controlling it. At Arch, we build industrial IOT solutions radically faster using a combination of modularity and automation. You'll use some of the open source tools that we've built to build your first IOTile device.
 
 
-##Background Story
+## Background Story
 Arch is bringing to market a new radiation sensor (a POD-1R) that can monitor the radiation levels in the lab, allowing us to track changes over time and provide both metrics and alerts to those in the factory, protecting people's safety and preventing expensive repairs with early warning systems.
 We're just starting the project which is going to include:
 
@@ -20,12 +20,12 @@ Since the project is just getting started there's no hardware yet and no firmwar
 
 If you're successful, everyone will look to you as a hero because you'll be the one who makes sure that everybody's part works together and you'll unblock the mobile and cloud engineers from having to wait until the hardware is ready before being able to work with it.
 
-##Your Goal
+## Your Goal
 -Use CoreTools to write a python module that acts as a virtual IOTile device (see the required behavior section below for what it needs to do)
 -Test out your virtual device using the iotile command line tool to make sure that it works as you develop
 -Write a series of unit tests using pytest and some of the built-in CoreTools functionality to make sure your virtual device is behaving properly.
 
-##Getting Started
+## Getting Started
 You'll need a computer running linux, MacOS or Windows with a Python 2.7 installation. You can probably use Python 3 as well -- we have upgraded the compatibility, but a warning that there may be incompatibilities we haven't discovered yet.
 Follow the instructions here to get the basic CoreTools installed on your computer:
 - http://coretools.readthedocs.io/en/latest/introduction.html
@@ -35,7 +35,7 @@ Read up on how to build virtual devices, it will help you develop your own:
 - https://coretools.readthedocs.io/en/latest/tutorials.html#creating-your-first-iotile-device
 You can look at tutorials past this first section, but they might not be used for what we are asking in this exercise. However, you can generally use the concepts to further extend the behavior of your virtual device!
 
-#Required Device Behavior
+# Required Device Behavior
 **PROTIP** : Completing steps (1) and (2) from the Getting Started section should make this section much easier to get started with.
 
 The goal of your device is 
@@ -88,10 +88,7 @@ If you implement this behavior, you should be able to demonstrate the functional
 
 
 
-##Reference Information
-The best reference for having a virtual device output data in real time is in iotile-test:
-- https://github.com/iotile/coretools/blob/master/iotiletest/iotile/mock/devices/realtime_test_device.py
-
+## Reference Information
 The best reference for writing python scripts that can test your device is in the CoreTools documentation:
 - http://coretools.readthedocs.io/en/latest/introduction.html#writing-scripts
 
