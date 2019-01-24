@@ -35,6 +35,14 @@ Read up on how to build virtual devices, it will help you develop your own:
 - https://coretools.readthedocs.io/en/latest/tutorials.html#creating-your-first-iotile-device
 You can look at tutorials past this first section, but they might not be used for what we are asking in this exercise. However, you can generally use the concepts to further extend the behavior of your virtual device!
 
+# Coding Expectations & Honor Statement
+We can't watch everything you do, so we are trusting you to follow these coding guidelines so that everyone gets a fair assessment:
+- All code submitted must be your own. You are expected to work on this without the assistance of other people.
+- You can reference Python syntax materials (i.e. https://docs.python.org/2/library/), but don't look up solutions to algorithmic challenges you face.
+- You shouldn't need any third party libraries that aren't included in the `requirements.txt`. 
+
+Remember, this is your opportunity to demonstrate how you approach and implement solutions to features that you might encounter during your work at Arch. Use that in judging the appropriate methods of implementation. You are welcome (and encouraged) to verbosely comment your work so we can understand what you did better. 
+
 # Required Device Behavior
 **PROTIP** : Completing the Getting Started section should make this section much easier to understand.
 
