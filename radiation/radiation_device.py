@@ -64,5 +64,12 @@ class RadiationDevice(VirtualIOTileDevice):
 
     @rpc(8, 0x9905, "", "L")
     def get_mode(self):
-        """Return lowest mode of the readings. If there is no mode, return 0"""
+        """Definition of mode : https://www.purplemath.com/modules/meanmode.htm
+
+        For this function, we should return the mode with the lowest value, if there is one.
+
+        If there is no mode, return 0.
+
+        The provided unit tests should help clarify this further.
+        """
         # TODO: implement me
