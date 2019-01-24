@@ -97,6 +97,11 @@ Received Stream 4096: 370 at 2019-01-24 22:39:57.990320
 ```
 
 
+## NOTES
+- Please do not create a public fork or public solution to this repo. If you do want to store your work, we ask that you keep it in your own private repos (git lets everyone do this now!).
+- If you are submitting your solution, it's easiest if you can zip/tar the "radiation" directory and send us just the one file.
+
+
 ## Reference Information
 The best reference for writing python scripts that can test your device is in the CoreTools documentation:
 - http://coretools.readthedocs.io/en/latest/introduction.html#writing-scripts
