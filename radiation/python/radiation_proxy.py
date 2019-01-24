@@ -29,7 +29,7 @@ class RadiationProxyObject(TileBusProxyObject):
         pass
         # TODO: implement me
 
-    @return_type("int", "int")
+    @return_type("list(int)")
     def get_min_max(self):
         pass
         # TODO: implement me
