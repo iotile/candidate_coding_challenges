@@ -84,7 +84,7 @@ Have the device output the current average radiation reading via the realtime st
 - https://coretools.readthedocs.io/en/latest/tutorials.html#simulating-realtime-data
 - https://github.com/iotile/coretools/blob/master/iotiletest/iotile/mock/devices/realtime_test_device.py
 
-If you implement this behavior, you should be able to demonstrate the functionality in the same way demonstrated on the link above (please include a note that you did it, with what your output looked like, either screen shot or copy pasted)
+If you implement this behavior, you should be able to demonstrate the functionality in the same way demonstrated on the link above, in a python file (you will need to extend the example to actually add radiation readings, play around with it) included with your submission.
 
 
 
