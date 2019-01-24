@@ -84,8 +84,17 @@ Have the device output the current average radiation reading via the realtime st
 - https://coretools.readthedocs.io/en/latest/tutorials.html#simulating-realtime-data
 - https://github.com/iotile/coretools/blob/master/iotiletest/iotile/mock/devices/realtime_test_device.py
 
-If you implement this behavior, you should be able to demonstrate the functionality in the same way demonstrated on the link above, in a python file (you will need to extend the example to actually add radiation readings, play around with it) included with your submission.
-
+If you implement this behavior, you should be able to demonstrate the functionality in the same way demonstrated on the link above, in a python file (you will need to extend the example to actually add radiation readings, play around with it) included with your submission. Here's a hint of what you might use to show that:
+```
+(radiation_env) Matts-Macbook-Pro:radiation mrunchey$ python radiation_realtime_test.py 
+Received Stream 4096: 0 at 2019-01-24 22:39:51.085910
+Received Stream 4096: 59 at 2019-01-24 22:39:52.235488
+Received Stream 4096: 226 at 2019-01-24 22:39:53.392914
+Received Stream 4096: 173 at 2019-01-24 22:39:54.533378
+Received Stream 4096: 211 at 2019-01-24 22:39:55.697972
+Received Stream 4096: 292 at 2019-01-24 22:39:56.835747
+Received Stream 4096: 370 at 2019-01-24 22:39:57.990320
+```
 
 
 ## Reference Information
