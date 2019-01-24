@@ -21,9 +21,9 @@ Since the project is just getting started there's no hardware yet and no firmwar
 If you're successful, everyone will look to you as a hero because you'll be the one who makes sure that everybody's part works together and you'll unblock the mobile and cloud engineers from having to wait until the hardware is ready before being able to work with it.
 
 ## Your Goal
--Use CoreTools to write a python module that acts as a virtual IOTile device (see the required behavior section below for what it needs to do)
--Test out your virtual device using the iotile command line tool to make sure that it works as you develop
--Write a series of unit tests using pytest and some of the built-in CoreTools functionality to make sure your virtual device is behaving properly.
+- Use CoreTools to write a python module that acts as a virtual IOTile device (see the required behavior section below for what it needs to do)
+- Test out your virtual device using the iotile command line tool to make sure that it works as you develop
+- Write a series of unit tests using pytest and some of the built-in CoreTools functionality to make sure your virtual device is behaving properly.
 
 ## Getting Started
 You'll need a computer running linux, MacOS or Windows with a Python 2.7 installation. You can probably use Python 3 as well -- we have upgraded the compatibility, but a warning that there may be incompatibilities we haven't discovered yet.
