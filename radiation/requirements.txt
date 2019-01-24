@@ -1,0 +1,5 @@
+iotile-core
+iotile-test
+iotile-transport-bled112
+pytest
+
