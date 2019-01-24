@@ -36,7 +36,7 @@ Read up on how to build virtual devices, it will help you develop your own:
 You can look at tutorials past this first section, but they might not be used for what we are asking in this exercise. However, you can generally use the concepts to further extend the behavior of your virtual device!
 
 # Required Device Behavior
-**PROTIP** : Completing steps (1) and (2) from the Getting Started section should make this section much easier to get started with.
+**PROTIP** : Completing the Getting Started section should make this section much easier to understand.
 
 The goal of your device is 
 - to provide RPC definitions that let you input simulated data, 
