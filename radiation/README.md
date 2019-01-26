@@ -1,3 +1,6 @@
+# Do not create a public fork or public solution to this repo. 
+#### If you do want to store your work, we ask that you keep it in your own private repos (git lets everyone do this now!).
+
 ## Introduction
 This project is designed to get you familiar with how to build and interact with IOTile hardware devices by creating a virtual hardware device and then controlling it. At Arch, we build industrial IOT solutions radically faster using a combination of modularity and automation. You'll use some of the open source tools that we've built to build your first IOTile device.
 
