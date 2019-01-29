@@ -1,4 +1,4 @@
-# Do not create a public fork or public solution to this repo. 
+# Please do not publish a solution in either a fork or clone. Keep all of your work local! 
 #### If you do want to store your work, we ask that you keep it in your own private repos (git lets everyone do this now!).
 
 ## Introduction
