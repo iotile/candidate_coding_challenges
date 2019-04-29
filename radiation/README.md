@@ -4,6 +4,10 @@
 ## Introduction
 This project is designed to get you familiar with how to build and interact with IOTile hardware devices by creating a virtual hardware device and then controlling it. At Arch, we build industrial IOT solutions radically faster using a combination of modularity and automation. You'll use some of the open source tools that we've built to build your first IOTile device.
 
+### What we're looking for
+
+Think of this as an opportunity for you to show us how you approach solving a problem. Being more verbose than normal in describing what you're solving so that we can follow your process might help, but is not required. 
+
 
 ## Background Story
 Arch is bringing to market a new radiation sensor (a POD-1R) that can monitor the radiation levels in the lab, allowing us to track changes over time and provide both metrics and alerts to those in the factory, protecting people's safety and preventing expensive repairs with early warning systems.
@@ -29,7 +33,7 @@ If you're successful, everyone will look to you as a hero because you'll be the 
 - Write a series of unit tests using pytest and some of the built-in CoreTools functionality to make sure your virtual device is behaving properly.
 
 ## Getting Started
-You'll need a computer running linux, MacOS or Windows with a Python 2.7 installation. You can probably use Python 3 as well -- we have upgraded the compatibility, but a warning that there may be incompatibilities we haven't discovered yet.
+You'll need a computer running linux, MacOS or Windows with a Python 3.5+ installation. You can try to use Python2.7, but we have deprecated support for that and can't guarantee that everything still works. We made efforts to leave compatibility there, however.
 Follow the instructions here to get the basic CoreTools installed on your computer:
 - http://coretools.readthedocs.io/en/latest/introduction.html
 - You should also install pytest (pip install pytest)
@@ -41,7 +45,7 @@ You can look at tutorials past this first section, but they might not be used fo
 # Coding Expectations & Honor Statement
 We can't watch everything you do, so we are trusting you to follow these coding guidelines so that everyone gets a fair assessment:
 - All code submitted must be your own. You are expected to work on this without the assistance of other people.
-- You can reference Python syntax materials (i.e. https://docs.python.org/2/library/), and Arch reference documentation, but don't look up solutions to algorithmic challenges you face.
+- You can reference Python syntax materials (i.e. https://docs.python.org/3/library/), and Arch reference documentation, but don't look up solutions to algorithmic challenges you face.
 - You shouldn't need any third party libraries that aren't included in the `requirements.txt`. 
 
 Remember, this is your opportunity to demonstrate how you approach and implement solutions to features that you might encounter during your work at Arch. Use that in judging the appropriate methods of implementation. You are welcome (and encouraged) to verbosely comment your work so we can understand what you did better. 
