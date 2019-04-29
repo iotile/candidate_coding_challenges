@@ -35,7 +35,8 @@ If you're successful, everyone will look to you as a hero because you'll be the 
 ## Getting Started
 You'll need a computer running linux, MacOS or Windows with a Python 3.5+ installation. You can try to use Python2.7, but we have deprecated support for that and can't guarantee that everything still works. We made efforts to leave compatibility there, however.
 Follow the instructions here to get the basic CoreTools installed on your computer:
-- http://coretools.readthedocs.io/en/latest/introduction.html
+- http://coretools.readthedocs.io/en/latest/introduction.html 
+- **Important** : The docs may still say python2.7 is recommended, but that is outdated. It will be easier if you use Python3.
 - You should also install pytest (pip install pytest)
 
 Read up on how to build virtual devices, it will help you develop your own:
@@ -111,6 +112,7 @@ Received Stream 4096: 292 at 2019-01-24 22:39:56.835747
 Received Stream 4096: 370 at 2019-01-24 22:39:57.990320
 ```
 
+You may see hex values instead of integers for the Stream ID (i.e. 4096 showing up as 0x1000, and the value after the colon as well) depending on which version of Python you are using.
 
 ## NOTES
 - Please do not create a public fork or public solution to this repo. If you do want to store your work, we ask that you keep it in your own private repos (git lets everyone do this now!).
