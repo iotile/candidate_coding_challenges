@@ -1,4 +1,4 @@
-# Please do not publish a solution in either a fork or clone. Keep all of your work local! 
+# Please do not publish a solution in either a fork or clone. Keep all of your work local!
 #### If you do want to store your work, we ask that you keep it in your own private repos (git lets everyone do this now!).
 
 ## Introduction
@@ -6,7 +6,7 @@ This project is designed to get you familiar with how to build and interact with
 
 ### What we're looking for
 
-Think of this as an opportunity for you to show us how you approach solving a problem. Being more verbose than normal in describing what you're solving so that we can follow your process might help, but is not required. 
+Think of this as an opportunity for you to show us how you approach solving a problem. Being more verbose than normal in describing what you're solving so that we can follow your process might help, but is not required.
 
 
 ## Background Story
@@ -35,9 +35,33 @@ If you're successful, everyone will look to you as a hero because you'll be the 
 ## Getting Started
 You'll need a computer running linux, MacOS or Windows with a Python 3.5+ installation. You can try to use Python2.7, but we have deprecated support for that and can't guarantee that everything still works. We made efforts to leave compatibility there, however.
 Follow the instructions here to get the basic CoreTools installed on your computer:
-- http://coretools.readthedocs.io/en/latest/introduction.html 
+- http://coretools.readthedocs.io/en/latest/introduction.html
 - **Important** : The docs may still say python2.7 is recommended, but that is outdated. It will be easier if you use Python3.
 - You should also install pytest (pip install pytest)
+- **Important**: The "Creating a Virtual Device" section is slightly outdated as well. The import path has changed. You should see this in the provided template for `radiation_device.py`. The correct example code from the docs should look like this:
+
+```
+"""Virtual IOTile device for CoreTools Walkthrough"""
+
+from iotile.core.hw.virtual import SimpleVirtualDevice, rpc
+
+class DemoVirtualDevice(SimpleVirtualDevice):
+    """A simple virtual IOTile device that has an RPC to read fake temperature
+
+    Args:
+        args (dict): Any arguments that you want to pass to create this device.
+    """
+
+    def __init__(self, args):
+        super(DemoVirtualDevice, self).__init__(1, 'Demo01')
+
+    @rpc(8, 0x0004, "", "H6sBBBB")
+    def controller_status(self):
+        """Return the name of the controller as a 6 byte string"""
+
+        status = (1 << 1) | (1 << 0)  # Report configured and running
+        return [0xFFFF, self.name, 1, 0, 0, status]
+```
 
 Read up on how to build virtual devices, it will help you develop your own:
 - https://coretools.readthedocs.io/en/latest/tutorials.html#creating-your-first-iotile-device
@@ -47,16 +71,16 @@ You can look at tutorials past this first section, but they might not be used fo
 We can't watch everything you do, so we are trusting you to follow these coding guidelines so that everyone gets a fair assessment:
 - All code submitted must be your own. You are expected to work on this without the assistance of other people.
 - You can reference Python syntax materials (i.e. https://docs.python.org/3/library/), and Arch reference documentation, but don't look up solutions to algorithmic challenges you face.
-- You shouldn't need any third party libraries that aren't included in the `requirements.txt`. 
+- You shouldn't need any third party libraries that aren't included in the `requirements.txt`.
 
-Remember, this is your opportunity to demonstrate how you approach and implement solutions to features that you might encounter during your work at Arch. Use that in judging the appropriate methods of implementation. You are welcome (and encouraged) to verbosely comment your work so we can understand what you did better. 
+Remember, this is your opportunity to demonstrate how you approach and implement solutions to features that you might encounter during your work at Arch. Use that in judging the appropriate methods of implementation. You are welcome (and encouraged) to verbosely comment your work so we can understand what you did better.
 
 # Required Device Behavior
 **PROTIP** : Completing the Getting Started section should make this section much easier to understand.
 
-The goal of your device is 
-- to provide RPC definitions that let you input simulated data, 
-- to more effectively provoke test scenarios, and 
+The goal of your device is
+- to provide RPC definitions that let you input simulated data,
+- to more effectively provoke test scenarios, and
 - implement the RPCs that would actually be used on the physical devices (the "emulation" part)
 
 To get started, we've provided this repository with a skeleton to help you get started on development.
@@ -75,12 +99,12 @@ The files should do a sufficient job explaining what you need to implement. All 
 
 ### Example commands that you should be able to run successfully to validate your solution
 ```
-(radiation_venv) Matts-Macbook-Pro:radiation mrunchey$ pytest test_basic.py 
+(radiation_venv) Matts-Macbook-Pro:radiation mrunchey$ pytest test_basic.py
 ================================================================ test session starts ================================================================
 platform darwin -- Python 2.7.15, pytest-4.1.1, py-1.7.0, pluggy-0.8.1
 rootdir: /Users/mrunchey/gitrepos/candidate_challenge_solutions/radiation, inifile:
 plugins: timeout-1.3.3
-collected 5 items                                                                                                                                   
+collected 5 items
 
 test_basic.py .....                                                                                                                           [100%]
 
@@ -95,14 +119,14 @@ test_basic.py .....                                                             
 
 
 
-## BONUS CHALLENGE: 
+## BONUS CHALLENGE:
 Have the device output the current average radiation reading via the realtime streaming interface. To do this, learn how to have your virtual device output real time data:
 - https://coretools.readthedocs.io/en/latest/tutorials.html#simulating-realtime-data
 - https://github.com/iotile/coretools/blob/master/iotiletest/iotile/mock/devices/realtime_test_device.py
 
 If you implement this behavior, you should be able to demonstrate the functionality in the same way demonstrated on the link above, in a python file (you will need to extend the example to actually add radiation readings, play around with it) included with your submission. Here's a hint of what you might use to show that:
 ```
-(radiation_env) Matts-Macbook-Pro:radiation mrunchey$ python radiation_realtime_test.py 
+(radiation_env) Matts-Macbook-Pro:radiation mrunchey$ python radiation_realtime_test.py
 Received Stream 4096: 0 at 2019-01-24 22:39:51.085910
 Received Stream 4096: 59 at 2019-01-24 22:39:52.235488
 Received Stream 4096: 226 at 2019-01-24 22:39:53.392914

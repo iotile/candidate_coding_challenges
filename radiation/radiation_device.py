@@ -1,13 +1,13 @@
 """Virtual IOTile device for CoreTools Walkthrough"""
 
-from iotile.core.hw.virtual.virtualdevice import VirtualIOTileDevice, rpc
+from iotile.core.hw.virtual import SimpleVirtualDevice, rpc
 
 from typedargs import iprint
 
 
 import logging
 
-class RadiationDevice(VirtualIOTileDevice):
+class RadiationDevice(SimpleVirtualDevice):
     """A  virtual Radiation IOTile device that has RPCs that emulate what our radiation device will do
     at a high level.
 
