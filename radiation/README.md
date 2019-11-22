@@ -36,32 +36,7 @@ If you're successful, everyone will look to you as a hero because you'll be the 
 You'll need a computer running linux, MacOS or Windows with a Python 3.5+ installation. You can try to use Python2.7, but we have deprecated support for that and can't guarantee that everything still works. We made efforts to leave compatibility there, however.
 Follow the instructions here to get the basic CoreTools installed on your computer:
 - http://coretools.readthedocs.io/en/latest/introduction.html
-- **Important** : The docs may still say python2.7 is recommended, but that is outdated. It will be easier if you use Python3.
-- You should also install pytest (pip install pytest)
-- **Important**: The "Creating a Virtual Device" section is slightly outdated as well. The import path has changed. You should see this in the provided template for `radiation_device.py`. The correct example code from the docs should look like this:
-
-```
-"""Virtual IOTile device for CoreTools Walkthrough"""
-
-from iotile.core.hw.virtual import SimpleVirtualDevice, rpc
-
-class DemoVirtualDevice(SimpleVirtualDevice):
-    """A simple virtual IOTile device that has an RPC to read fake temperature
-
-    Args:
-        args (dict): Any arguments that you want to pass to create this device.
-    """
-
-    def __init__(self, args):
-        super(DemoVirtualDevice, self).__init__(1, 'Demo01')
-
-    @rpc(8, 0x0004, "", "H6sBBBB")
-    def controller_status(self):
-        """Return the name of the controller as a 6 byte string"""
-
-        status = (1 << 1) | (1 << 0)  # Report configured and running
-        return [0xFFFF, self.name, 1, 0, 0, status]
-```
+- You should also install pytest (`pip install pytest`)
 
 Read up on how to build virtual devices, it will help you develop your own:
 - https://coretools.readthedocs.io/en/latest/tutorials.html#creating-your-first-iotile-device
@@ -71,7 +46,7 @@ You can look at tutorials past this first section, but they might not be used fo
 We can't watch everything you do, so we are trusting you to follow these coding guidelines so that everyone gets a fair assessment:
 - All code submitted must be your own. You are expected to work on this without the assistance of other people.
 - You can reference Python syntax materials (i.e. https://docs.python.org/3/library/), and Arch reference documentation, but don't look up solutions to algorithmic challenges you face.
-- You shouldn't need any third party libraries that aren't included in the `requirements.txt`.
+- You won't need any third party libraries that aren't included in the `requirements.txt`.
 
 Remember, this is your opportunity to demonstrate how you approach and implement solutions to features that you might encounter during your work at Arch. Use that in judging the appropriate methods of implementation. You are welcome (and encouraged) to verbosely comment your work so we can understand what you did better.
 
@@ -116,13 +91,13 @@ test_basic.py .....                                                             
 - You can write helper functions in `radiation_device.py`, not everything has to be an RPC signature.
 - Before you submit your challenge, **make sure** you can successfully pass `test_basic.py`.
 
-
-
-
 ## BONUS CHALLENGE:
+
 Have the device output the current average radiation reading via the realtime streaming interface. To do this, learn how to have your virtual device output real time data:
 - https://coretools.readthedocs.io/en/latest/tutorials.html#simulating-realtime-data
 - https://github.com/iotile/coretools/blob/master/iotiletest/iotile/mock/devices/realtime_test_device.py
+
+Note that this part of the code utilizes asyncio coroutines to manage context switching between the "threads".
 
 If you implement this behavior, you should be able to demonstrate the functionality in the same way demonstrated on the link above, in a python file (you will need to extend the example to actually add radiation readings, play around with it) included with your submission. Here's a hint of what you might use to show that:
 ```
@@ -137,6 +112,7 @@ Received Stream 4096: 370 at 2019-01-24 22:39:57.990320
 ```
 
 You may see hex values instead of integers for the Stream ID (i.e. 4096 showing up as 0x1000, and the value after the colon as well) depending on which version of Python you are using.
+
 
 ## NOTES
 - Please do not create a public fork or public solution to this repo. If you do want to store your work, we ask that you keep it in your own private repos (git lets everyone do this now!).
