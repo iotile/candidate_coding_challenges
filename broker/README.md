@@ -51,7 +51,7 @@ If you run the test message script, and it doesn't report any errors, then it is
 
 The messages file will publish messages to rabbitMQ's `amq.topic` exchange on the routing key `raw.arch.{site}.{machine_id}.{signal_id}`. The wildcards stand for:
 - `site` is a string with a value set to `ps--xxxx-xxxx`. The eight `x` items will be hex characters. An example might be `ps--0501-f5c2`.
-- `machine_id` will be a string with a value set to `m--xxxx-xxxx` with the same characteristics as the site. An example of a machine ID would be `m--abcd-1234`.
+- `machine_id` will be a string with a value set to `d--xxxx-xxxx` with the same characteristics as the site. An example of a machine ID would be `d--abcd-1234`.
 - `signal_id` is a 4-digit hex string. An example of the signal ID would be `1028`.
 
 Along with the message payload, each message has a header (in the `application_headers`) set with a timestamp in the field `timestam_in_ms`.
