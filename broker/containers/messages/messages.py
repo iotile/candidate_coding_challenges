@@ -4,7 +4,7 @@ import time
 
 
 def publish_messages():
-    with amqp.Connection('10.0.100.124', userid="iotile", password="iotile", confirm_publish=True) as c:
+    with amqp.Connection('localhost', userid="iotile", password="iotile", confirm_publish=True) as c:
 
         ch = c.channel()
 
