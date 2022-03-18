@@ -28,8 +28,9 @@ and then query the resulting timeline.
    - end_time: datetime
 3. Add API routes using the `django-rest-framework` library. You have to choose the names and methods.
    1. A route to create a new timeblock (save it in DB).
-   2. A route to get a timeblock info from its id.
-   3. A route to get the resulting timeline (you can mock it for now: we'll compute the timeline in next step).
+   2. A route to get the list of all saved timeblocks.
+   3. A route to get a timeblock info from its id.
+   4. A route to get the resulting timeline (you can mock it for now: we'll compute the timeline in next step).
 4. Compute the timeline based on all the timeblocks in DB, and return it on API route call.
    It is basically a data structure that would be used by some frontend to display a contiguous timeline.
    We have to resolve overlapping (if 2 timeblocks overlap the resulting name will be the concatenation of the 2 names)
@@ -60,6 +61,6 @@ For example (times are written as integers for simplicity):
 
 You can send us either a link to a Git repository, or a ZIP file by email.
 We expect you to provide:
- - a docker-compose file
- - the django code
+ - docker files (a docker-compose file, Dockerfiles if needed)
+ - the django code folder
  - a README to explain how to spawn your server and make the API requests
