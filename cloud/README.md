@@ -30,7 +30,8 @@ and then query the resulting timeline.
    1. A route to create a new timeblock (save it in DB).
    2. A route to get the list of all saved timeblocks.
    3. A route to get a timeblock info from its id.
-   4. A route to get the resulting timeline (you can mock it for now: we'll compute the timeline in next step).
+   4. A route to delete a timeblock by its id.
+   5. A route to get the resulting timeline (you can mock it for now: we'll compute the timeline in next step).
 4. Compute the timeline based on all the timeblocks in DB, and return it on API route call.
    It is basically a data structure that would be used by some frontend to display a contiguous timeline.
    We have to resolve overlapping (if 2 timeblocks overlap the resulting name will be the concatenation of the 2 names)
