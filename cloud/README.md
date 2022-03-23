@@ -60,7 +60,7 @@ For example (times are written as integers for simplicity):
 
 ## Code submission
 
-You can send us either a link to a Git repository, or a ZIP file by email.
+You can send us either a link to a Git repository, or a ZIP file by email. As we request that you don't publish your solution publicly, you could use private Github repositories and add your interviewer as a collaborator to give him/her access to your work.
 We expect you to provide:
  - docker files (a docker-compose file, Dockerfiles if needed)
  - the django code folder
