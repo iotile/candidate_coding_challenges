@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+    image: arch_coding_challenge_cloud_server
+    container_name: arch_coding_challenge_cloud_server
+    depends_on:
+      - database
+    volumes:
+      - ./server:/app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    command: ["bash", "-c", "/app/runserver.sh"]
+
+  database:
+    image: postgres:14.2
+    container_name: arch_coding_challenge_cloud_database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  db_data: {}

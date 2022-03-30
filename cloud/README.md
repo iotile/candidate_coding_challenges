@@ -19,20 +19,18 @@ To test the skills you will need to be part of the Cloud team, we will build a s
 The goal of this exercise is to build an API that will allow a user to register time blocks with a name
 and then query the resulting timeline.
 
-1. Setup a Django server within a Docker container. This server will need a PostgreSQL database to store models, which
-   will also be into a Docker container. We recommend describing these containers using docker-compose.
-2. Define the `Timeblock` model and migrations to save it in DB.
+1. Define the `Timeblock` model and migrations to save it in DB.
    - id: int (auto-increment)
    - name: str
    - start_time: datetime
    - end_time: datetime
-3. Add API routes using the `django-rest-framework` library. You have to choose the names and methods.
+2. Add API routes using the `django-rest-framework` library. You have to choose the names and methods.
    1. A route to create a new timeblock (save it in DB).
    2. A route to get the list of all saved timeblocks.
    3. A route to get a timeblock info from its id.
    4. A route to delete a timeblock by its id.
    5. A route to get the resulting timeline (you can mock it for now: we'll compute the timeline in next step).
-4. Compute the timeline based on all the timeblocks in DB, and return it on API route call.
+3. Compute the timeline based on all the timeblocks in DB, and return it on API route call.
    It is basically a data structure that would be used by some frontend to display a contiguous timeline.
    We have to resolve overlapping (if 2 timeblocks overlap the resulting name will be the concatenation of the 2 names)
    and gaps (no timeblock defined during some time).
@@ -47,15 +45,27 @@ For example (times are written as integers for simplicity):
 0     2     4     6     8     10
 ```
 
+**Bonus**
+
+You can add:
+ - a Redis cache to return timeline that have been already computed
+
+OR
+
+ - a celery worker to process the timeline asynchronously
+
 ## Misc informations
 
 - We'll use Python3, preferably with type hinting.
+- A basic skeleton is provided in the `skeleton/` folder. You are free to use it or not. To start it,
+  just run `docker-compose up` from the `skeleton/` folder.
 - API responses are formatted in JSON.
 - You should handle errors with correct HTTP status code.
-- Authentication is not needed (could be some sort of bonus).
+- Authentication is not needed.
 - You should use `django-rest-frameworks` serializers.
 - You should write some unit tests.
 - Timeblock computation should be optimized as much as possible.
+- You can add external tools to help you improve your code quality (flake8, isort, coverage, ...etc).
 - If you think there are missing information, please fell free to choose your way to do. We'll discuss it later.
 
 ## Code submission
