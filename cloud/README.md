@@ -10,14 +10,16 @@ this product, as it is the main user interface but also the link with all our ot
 
 It is basically a webapp served by a Django server, with all the needed backend tools.
 
-To test the skills you will need to be part of the Cloud team, we will build a small API running with Django.
-
-*It should take less than 1 hour to complete. If you think some parts need more, please tell us.*
+To test the skills you will need to be part of the Cloud team, we will build a small API running with Django. Please,
+consider you are writing this code as if you wanted to submit a PR to the team (it is not a dirty PoC, the only shortcuts to
+take are the ones defined the part "Misc informations" below).
 
 ## Description
 
 The goal of this exercise is to build an API that will allow a user to register time blocks with a name
-and then query the resulting timeline.
+and then query the resulting timeline. The timeblocks duration can be from seconds to several days (no assumption on that).
+Let's imagine, it can represent a production line status (running, idle, down) and the resulting timeline could be used
+by the frontend to display an overall timeline to sum up the line status, at any time, for the last past week.
 
 1. Define the `Timeblock` model and migrations to save it in DB.
    - id: int (auto-increment)
@@ -35,7 +37,7 @@ and then query the resulting timeline.
    We have to resolve overlapping (if 2 timeblocks overlap the resulting name will be the concatenation of the 2 names)
    and gaps (no timeblock defined during some time).
 
-For example (times are written as integers for simplicity): 
+For example (times are written as integers for simplicity, please remind they are datetime objects according to 1.): 
  - Timeblocks: {name: 'A', start_time: 0, end_time: 2}, {name: 'B', start_time: 4, end_time: 8} and {name: 'C', start_time: 6, end_time: 10}.
  - Timeline (as ascii blocks, but you must return a data structure):
 ```
@@ -56,17 +58,18 @@ OR
 
 ## Misc informations
 
-- We'll use Python3, preferably with type hinting.
+- We'll use Python3.8, preferably with type hinting.
 - A basic skeleton is provided in the `skeleton/` folder. You are free to use it or not. To start it,
   just run `docker-compose up` from the `skeleton/` folder.
 - API responses are formatted in JSON.
 - You should handle errors with correct HTTP status code.
 - Authentication is not needed.
-- You should use `django-rest-frameworks` serializers.
-- You should write some unit tests.
-- Timeblock computation should be optimized as much as possible.
+- You must use `django-rest-frameworks` serializers.
+- You must write some unit tests.
+- Minimal documentation/comments are expected (no need to write all docstrings, just explain non self-explanatory code).
+- Timeline computation should be optimized as much as possible. Optimal algorithm is not required, but we'll discuss about the time/space complexity.
 - You can add external tools to help you improve your code quality (flake8, isort, coverage, ...etc).
-- If you think there are missing information, please fell free to choose your way to do. We'll discuss it later.
+- If you think there are missing information, please fell free to choose your best way to do. We'll discuss it later.
 
 ## Code submission
 
